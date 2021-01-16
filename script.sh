@@ -70,8 +70,6 @@ AM_I_ROOT="$(id -u)"
 
 
 
-
-
 print_status " ${bold}${green}checking for required packages...${normal}"
 
 INSTALL_ME=""
@@ -87,14 +85,21 @@ fi
 
 
 # docker
-[[ -z $(which docker) ]] && print_status "${bold}${red}No docker found${normal}" 
-[[ -z $(which docker) ]] && print_status "${cyan} Installing docker now....${normal}"  curl -fsSL https://get.docker.com/ | sh
+IS_DOCKER=$(which docker)
+if [ -z $IS_DOCKER ] ; then
+    print_status "${bold}${red}No docker found${normal}"
+    print_status "${cyan} Installing docker now....${normal}"
+    curl -fsSL https://get.docker.com/ | sh
+fi
 
 
 # docker-compose
-[[ -z $(which docker-compose) ]] && print_status "${bold}${red}No docker-compose found, installing it now${normal}"
-[[ -z $(which docker-compose) ]] && curl -L https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
-chmod +x /usr/local/bin/docker-compose
+IS_DOCKERCOMPOSE=$(which docker-compose)
+if [ -z $IS_DOCKERCOMPOSE ] ; then
+    print_status "${bold}${red}No docker-compose found, installing it now${normal}"
+    curl -L https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+    chmod +x /usr/local/bin/docker-compose
+fi
 
 
 echo "${bold}${yellow}last line, exiting now${normal}"
