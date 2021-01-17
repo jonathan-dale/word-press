@@ -5,9 +5,9 @@ Next we use Kompose to convert this single file into kubernetes manifests files 
 
 ##### script.sh
 Run first to setup and install needed packages
-```sh
+``sh
 ./script.sh
-```
+``
 
 ##### Install k3d's and install a cluster
 ``sh
@@ -17,9 +17,9 @@ k3d cluster create mycluster
 
 
 #### Create the .env file
-Copy .env.template to .env and set values for the database
+Copy .env.template to .env and set values for the database  
 
-Also add .env file to .gitignore so you dont commit the secrets 
+Also add .env file to .gitignore so you dont commit the secrets   
 ``sh
 cp .env.template .env
 touch .gitignore
@@ -48,7 +48,7 @@ Kompose is released via GitHub on a three-week cycle, you can see all current re
 Kompose dose not currently support parsing variables from .env files, see this [issue](https://github.com/kubernetes/kompose/issues/1289) for more info.
 
 The work around:
-```sh
-    docker-compose config > docker-compose.new.yaml
-    kompose convert -f docker-compose.new.yaml
-```
+``sh
+docker-compose config > docker-compose.new.yaml
+kompose convert -f docker-compose.new.yaml
+``
