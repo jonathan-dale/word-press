@@ -3,7 +3,7 @@ Easy Wordpress development with Docker
 Made for Ubuntu
 
 ## script.sh
-use this to setup the environment and install needed packages
+    used to setup and install needed packages
 
 
 ### Kompose
