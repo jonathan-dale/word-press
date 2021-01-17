@@ -22,4 +22,9 @@ Kompose is released via GitHub on a three-week cycle, you can see all current re
     sudo mv ./kompose /usr/local/bin/kompose
 
 
+##### kompose error
+Kompose will dose not currently support parsing variables from .env files (see this [issue](https://github.com/kubernetes/kompose/issues/1289) for more info.
 
+The work around:
+    docker-compose config > docker-compose.new.yaml
+    kompose convert -f docker-compose.new.yaml
