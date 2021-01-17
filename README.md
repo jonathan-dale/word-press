@@ -1,6 +1,7 @@
 # word-press
-Easy Wordpress development with Docker (for debian/ubuntu). \n
-We start out with docker-compose file with all the right stuff for a word-press front end behind an nginx web-server and mysql for the data. Next we use Kompose to convert this single file into kubernetes manifests files for deployments and services and others. 
+Easy Wordpress development with Docker (for debian/ubuntu).   
+We start out with docker-compose file configured to run a word-press web site with nginx web-server and mysql DB backend.   
+Next we use Kompose to convert this single file into kubernetes manifests files for deployments and services and others. 
 
 ##### script.sh
 Run first to setup and install needed packages
