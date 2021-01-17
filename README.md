@@ -22,7 +22,7 @@ Kompose is released via GitHub on a three-week cycle, you can see all current re
     sudo mv ./kompose /usr/local/bin/kompose
 
 
-##### kompose error
+##### kompose .env parsing Error
 
 Kompose dose not currently support parsing variables from .env files, see this [issue](https://github.com/kubernetes/kompose/issues/1289) for more info.
 
