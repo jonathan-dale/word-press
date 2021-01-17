@@ -2,8 +2,21 @@
 Easy Wordpress development with Docker
 Made for Ubuntu
 
-## script.sh
+#### script.sh
     used to setup and install needed packages
+
+#### Create the .env file
+Copy .env.template to .env and set values for
+- MYSQL_USER="string"
+- MYSQL_PASSWORD="string"
+- MYSQL_ROOT_PASSWORD="string"
+
+ should add to .gitignore so you dont commit the secrets 
+``sh
+touch .gitignore
+echo ".env" > .gitignore
+``
+
 
 
 ### Kompose
