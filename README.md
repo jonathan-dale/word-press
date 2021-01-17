@@ -1,22 +1,29 @@
 # word-press
-Easy Wordpress development with Docker
-Made for Ubuntu
+Easy Wordpress development with Docker (for debian/ubuntu). \n
+We start out with docker-compose file with all the right stuff for a word-press front end behind an nginx web-server and mysql for the data. Next we use Kompose to convert this single file into kubernetes manifests files for deployments and services and others. 
 
-#### script.sh
-    used to setup and install needed packages
+##### script.sh
+Run first to setup and install needed packages
+```sh
+./script.sh
+```
+
+##### Install k3d's and install a cluster
+``sh
+wget -q -O - https://raw.githubusercontent.com/rancher/k3d/main/install.sh | bash
+k3d cluster create mycluster
+``
+
 
 #### Create the .env file
-Copy .env.template to .env and set values for
-- MYSQL_USER="string"
-- MYSQL_PASSWORD="string"
-- MYSQL_ROOT_PASSWORD="string"
+Copy .env.template to .env and set values for the database
 
- should add to .gitignore so you dont commit the secrets 
+Also add .env file to .gitignore so you dont commit the secrets 
 ``sh
+cp .env.template .env
 touch .gitignore
 echo ".env" > .gitignore
 ``
-
 
 
 ### Kompose
