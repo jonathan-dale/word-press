@@ -10,6 +10,10 @@ use this to setup the environment and install needed packages
 
 Use [kompose](https://github.com/kubernetes/kompose) to convert docker-compose files to kubernetes files
 
+#### Binary installation
+Kompose is released via GitHub on a three-week cycle, you can see all current releases on the [GitHub release page](https://github.com/kubernetes/kompose/releases).
+
+__Linux and macOS:__
 
 #### Linux and macOS:
     # Linux
@@ -20,4 +24,6 @@ Use [kompose](https://github.com/kubernetes/kompose) to convert docker-compose f
     
     chmod +x kompose
     sudo mv ./kompose /usr/local/bin/kompose
+
+
 
